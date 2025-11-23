@@ -15,10 +15,10 @@ def add_b(b_list):
 def issue_b(b_list):
     id=input("Enter ID (e.g. 101): ")
     
-    flag=0
+    found=0
     for b in b_list:
         if b[0]==id:
-            flag=1
+            found=1
             if b[2]=="Yes":
                 print("Already issued.")
             else:
@@ -36,22 +36,22 @@ def issue_b(b_list):
                     print("Done.")
                     
                 except:
-                    print("Error: Date format wrong! Try again.")
+                    print("wrong date format.. try again")
                     print("----------------")
                     issue_b(b_list)
                     return
             break
             
-    if flag==0:
+    if found==0:
         print("Not found.")
 
 def return_b(b_list):
     id=input("Enter ID (e.g. 101): ")
     
-    flag=0
+    found=0
     for b in b_list:
         if b[0]==id:
-            flag=1
+            found=1
             if b[2]=="No":
                 print("Book is here only.")
             else:
@@ -64,7 +64,6 @@ def return_b(b_list):
                     diff=fine_calculator.get_overdue(d_ret, d_due)
                     
                     if diff>0:
-                        # use user input for fine
                         val=int(cost)
                         fine=diff*val
                         print("Late by", diff, "days.")
@@ -77,11 +76,11 @@ def return_b(b_list):
                     file_manager.save_data(b_list)
                     
                 except:
-                    print("Error: Input details wrong. Try again.")
+                    print("something went wrong. check inputs")
                     print("----------------")
                     return_b(b_list)
                     return
             break
             
-    if flag==0:
+    if found==0:
         print("Not found.")
