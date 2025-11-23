@@ -1,12 +1,11 @@
 # main.py
-import files
-import book_mgr
+import file_manager
+import book_operations
 
 def main():
     print("LIBRARY SYSTEM")
     
-    # load books at start
-    books = files.load_data()
+    books=file_manager.load_data()
     
     while True:
         print("\n1. Show")
@@ -16,26 +15,25 @@ def main():
         print("5. Exit")
         
         try:
-            x = int(input("Choice: "))
+            x=int(input("Choice: "))
         except:
-            print("Please enter a number.")
+            print("Enter number only.")
             continue
         
-        if x == 1:
+        if x==1:
             print("\nList of Books:")
             for b in books:
                 print(b)
-        elif x == 2:
-            book_mgr.add_b(books)
-        elif x == 3:
-            book_mgr.issue_b(books)
-        elif x == 4:
-            book_mgr.return_b(books)
-        elif x == 5:
+        elif x==2:
+            book_operations.add_b(books)
+        elif x==3:
+            book_operations.issue_b(books)
+        elif x==4:
+            book_operations.return_b(books)
+        elif x==5:
             print("Bye.")
             break
         else:
             print("Invalid choice.")
 
-# run program
 main()
