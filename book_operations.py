@@ -3,8 +3,8 @@ import file_manager
 import fine_calculator
 
 def add_b(b_list):
-    id=input("Enter Book ID: ")
-    name=input("Enter Title: ")
+    id=input("Enter Book ID (e.g. 101): ")
+    name=input("Enter Title (e.g. Python Basics): ")
     
     new_book=[id, name, "No", ""]
     b_list.append(new_book)
@@ -13,7 +13,7 @@ def add_b(b_list):
     print("Added.")
 
 def issue_b(b_list):
-    id=input("Enter ID: ")
+    id=input("Enter ID (e.g. 101): ")
     
     flag=0
     for b in b_list:
@@ -22,7 +22,7 @@ def issue_b(b_list):
             if b[2]=="Yes":
                 print("Already issued.")
             else:
-                d=input("Enter Due Date (Format DD/MM/YYYY): ")
+                d=input("Enter Due Date (e.g. 25/12/2023): ")
                 
                 try:
                     p=d.split('/')
@@ -46,7 +46,7 @@ def issue_b(b_list):
         print("Not found.")
 
 def return_b(b_list):
-    id=input("Enter ID: ")
+    id=input("Enter ID (e.g. 101): ")
     
     flag=0
     for b in b_list:
@@ -55,14 +55,18 @@ def return_b(b_list):
             if b[2]=="No":
                 print("Book is here only.")
             else:
-                d_ret=input("Return Date (Format DD/MM/YYYY): ")
+                d_ret=input("Return Date (e.g. 30/12/2023): ")
+                cost=input("Enter Fine Per Day (e.g. 5): ")
+                
                 d_due=b[3]
                 
                 try:
                     diff=fine_calculator.get_overdue(d_ret, d_due)
                     
                     if diff>0:
-                        fine=diff*5
+                        # use user input for fine
+                        val=int(cost)
+                        fine=diff*val
                         print("Late by", diff, "days.")
                         print("Fine is", fine)
                     else:
@@ -73,7 +77,7 @@ def return_b(b_list):
                     file_manager.save_data(b_list)
                     
                 except:
-                    print("Error: Date typed wrong. Try again.")
+                    print("Error: Input details wrong. Try again.")
                     print("----------------")
                     return_b(b_list)
                     return
