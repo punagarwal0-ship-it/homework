@@ -47,11 +47,11 @@ You can test the features by selecting the numbers in the menu:
 Please test the project in this order to see the features working:
 
 **Step 1: Issue a Book**
-* Run the program.
-* Choose **Option 3 (Issue)**.
-* Enter Book ID: `1` (or any ID from the list).
-* Enter Due Date: `01/01/2023` (Enter an old date so we can check the fine logic later).
-* The system will say "Done" and save it.
+* Run the program
+* Choose **Option 3 (Issue)**
+* Enter Book ID: `1` (or any ID from the list)
+* Enter Due Date: `01/01/2023` (Enter an old date)
+* The system will say "Done" and save it
 
 **Step 2: Return the Book**
 * Now, Choose **Option 4 (Return)**.
