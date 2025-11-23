@@ -1,4 +1,4 @@
-# Statement MD for VITYARTHI PROJECt
+# Statement MD for VITYARTHI PROJECT
 
 ## Problem Statement
 In many small library, the librarian is writing everything in a notebook which is very slow process. doing calculation for late fine is hard because sometimes months have different days and leap year is confusing. also paper records can get lost or damaged easily so we need digital way.
