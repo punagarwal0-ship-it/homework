@@ -1,4 +1,3 @@
-# main.py
 import file_manager
 import book_operations
 
