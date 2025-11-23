@@ -1,5 +1,3 @@
-# fine_calculator.py
-
 def leap(y):
     if(y%400==0):
         return True
