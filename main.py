@@ -15,9 +15,9 @@ def main():
         print("5. Exit")
         
         try:
-            x=int(input("Choice: "))
+            x=int(input("Choice (1-5): "))
         except:
-            print("Enter number only.")
+            print("numbers only pls")
             continue
         
         if x==1:
